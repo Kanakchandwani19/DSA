@@ -1,3 +1,5 @@
-list functions 
-2 patterns(did 6 though)
-2 hashing
+! April task
+Solve all maths problem
+Solve all pattern problem first
+Solve 1_list,py
+Solve 2_string.py
