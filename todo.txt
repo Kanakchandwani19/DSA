@@ -1,0 +1,3 @@
+list functions 
+2 patterns(did 6 though)
+2 hashing
