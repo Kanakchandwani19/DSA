@@ -17,11 +17,10 @@
 # *       *
 # * * * * *
 
+n=5
 
-def hollow_square(n):
-    # write your code here
-    pass
+for i in range(n):
+    for j in range(n):
+        print("*" if i==0 or i==n-1 or j==0 or j==n-1 else " ", end=" ")
+    print()
 
-
-# --- Run & Test ---
-hollow_square(5)

@@ -17,11 +17,7 @@
 #    ***
 #     *
 
+n=5 
 
-def inverted_pyramid(n):
-    # write your code here
-    pass
-
-
-# --- Run & Test ---
-inverted_pyramid(5)
+for i in range(n,0,-1):
+    print(" " * (n-i) + "*" * (2*i-1))

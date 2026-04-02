@@ -17,11 +17,10 @@
 #  ****
 # *****
 
+n = 5
 
-def right_aligned_triangle(n):
-    # write your code here
-    pass
+for i in range(1, n+1):
+    print(" " * (n-i) + "*" * i )
 
 
-# --- Run & Test ---
-right_aligned_triangle(5)
+  

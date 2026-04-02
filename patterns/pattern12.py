@@ -19,10 +19,4 @@
 # 11 12 13 14 15
 
 
-def floyds_triangle(n):
-    # write your code here
-    pass
 
-
-# --- Run & Test ---
-floyds_triangle(5)
