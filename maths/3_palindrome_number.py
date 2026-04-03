@@ -26,11 +26,14 @@
 
 
 def is_palindrome(n):
-    # write your code here
-    pass
+   if n<0:
+      return False
+   s = str(n) 
+   rev = s[::-1]
+   return s == rev
 
 
-# --- Run & Test ---
+
 print(is_palindrome(121))    # expected: True
 print(is_palindrome(1331))   # expected: True
 print(is_palindrome(1234))   # expected: False

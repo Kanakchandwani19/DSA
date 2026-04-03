@@ -20,11 +20,22 @@
 
 
 def reverse_number(n):
-    # write your code here
-    pass
+    rev = 0
+
+    while n>0:
+        number = n % 10
+        rev = rev * 10 + number
+        n = n // 10
+
+    return rev
 
 
-# --- Run & Test ---
+
+
+
+
+
+
 print(reverse_number(12345))  # expected: 54321
 print(reverse_number(1000))   # expected: 1
 print(reverse_number(7))      # expected: 7
