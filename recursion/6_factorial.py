@@ -23,11 +23,14 @@
 
 
 def factorial(n):
-    # write your code here
-    pass
+    if n == 0:
+        return 1
+    else:
+        return n* factorial(n-1)
 
 
-# --- Run & Test ---
+    
+
 print(factorial(5))   # expected: 120
 print(factorial(0))   # expected: 1
 print(factorial(6))   # expected: 720

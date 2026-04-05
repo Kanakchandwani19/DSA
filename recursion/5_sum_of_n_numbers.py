@@ -20,12 +20,15 @@
 #   Explanation: 1 + 2 + ... + 10 = 55
 
 
-def sum_of_n(n):
-    # write your code here
-    pass
+def sum(n):
+    if n==0:
+        return 0
+    else:
+        return sum(n-1) + n
+    
 
 
-# --- Run & Test ---
-print(sum_of_n(5))    # expected: 15
-print(sum_of_n(1))    # expected: 1
-print(sum_of_n(10))   # expected: 55
+
+print(sum(1))    # expected: 1
+print(sum(5))    # expected: 15
+print(sum(10))   # expected: 55

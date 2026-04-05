@@ -27,11 +27,10 @@
 # **     **
 # *       *
 
+n=5
 
-def butterfly(n):
-    # write your code here
-    pass
+for i in range(1, n+1):
+    print("*" *i + " "* (2*(n-i)) + "*" *i)
 
-
-# --- Run & Test ---
-butterfly(5)
+for i in range(n-1,0,-1):
+    print("*"*i + " "* (2*(n-i)) + "*" *i)

@@ -19,11 +19,12 @@
 
 
 def print_n_to_1(n):
-    # write your code here
-    pass
+    
+
+    
 
 
-# --- Run & Test ---
+
 print_n_to_1(5)   # expected: 5 4 3 2 1
 print("---")
 print_n_to_1(1)   # expected: 1

@@ -28,9 +28,11 @@
 
 
 def print_n_times(n):
-    # write your code here
-    pass
-
+    if n==0:
+        return 
+    
+    print("Hello")
+    print_n_times(n)
 
 # --- Run & Test ---
 print_n_times(3)   # expected: Hello printed 3 times

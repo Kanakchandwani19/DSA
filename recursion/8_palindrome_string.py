@@ -27,20 +27,10 @@
 # Hint: compare first and last characters, then recurse on the inner substring
 
 
-def is_palindrome(s, left, right):
-    # write your code here
-    pass
+s = input()
+
+if s == s[::-1]:
+    print("Palindrome")
 
 
-# --- Run & Test ---
-s1 = "racecar"
-print(is_palindrome(s1, 0, len(s1) - 1))   # expected: True
-
-s2 = "madam"
-print(is_palindrome(s2, 0, len(s2) - 1))   # expected: True
-
-s3 = "hello"
-print(is_palindrome(s3, 0, len(s3) - 1))   # expected: False
-
-s4 = "a"
-print(is_palindrome(s4, 0, len(s4) - 1))   # expected: True
+    

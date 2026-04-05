@@ -22,11 +22,13 @@
 
 
 def gcd(a, b):
-    # write your code here
-    pass
+    while b!=0:
+        (a,b) = (b,a%b)
+    return a
 
 
-# --- Run & Test ---
+  
+
 print(gcd(12, 8))     # expected: 4
 print(gcd(9, 6))      # expected: 3
 print(gcd(100, 75))   # expected: 25

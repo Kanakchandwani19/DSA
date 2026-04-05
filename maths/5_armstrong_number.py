@@ -24,8 +24,15 @@
 
 
 def is_armstrong(n):
-    # write your code here
-    pass
+    digit = len(str(n))
+    total = 0
+
+    for num in str(n):
+        total += int(num) ** digit
+
+    return total == n
+
+    
 
 
 # --- Run & Test ---

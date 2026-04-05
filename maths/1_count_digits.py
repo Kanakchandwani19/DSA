@@ -20,8 +20,11 @@
 
 
 def count_digits(n):
-    # write your code here
-    pass
+    count = 0
+    while n>0:
+        n = n // 10
+        count += 1
+    return count
 
 
 # --- Run & Test ---
