@@ -20,10 +20,13 @@
 
 
 def left_rotate_by_one(arr):
-    # write your code here
-    # modify arr in-place
-    pass
+    first = arr[0]  #store the first element
 
+    for i in range(len(arr) - 1):
+        arr[i] = arr[i+1]    #shift left
+
+    arr[len(arr) - 1] = first    #put the value of first at end
+    return arr
 
 # --- Run & Test ---
 arr1 = [1, 2, 3, 4, 5]

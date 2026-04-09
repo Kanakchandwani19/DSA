@@ -21,9 +21,16 @@
 
 
 def remove_duplicates(arr):
-    # write your code here
-    # modify arr in-place and return count of unique elements
-    pass
+    number = []
+
+    for num in arr:
+        if num not in number:
+            number.append(num)
+
+    for i in range(len(number)):
+        arr[i] = number[i]
+
+    return len(number)
 
 
 # --- Run & Test ---

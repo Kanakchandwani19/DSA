@@ -26,9 +26,7 @@
 
 
 def is_sorted(arr):
-    # write your code here
-    pass
-
+    return arr == sorted(arr)
 
 # --- Run & Test ---
 print(is_sorted([1, 2, 3, 4, 5]))   # expected: True

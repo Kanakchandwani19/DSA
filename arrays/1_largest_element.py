@@ -18,9 +18,8 @@
 
 
 def largest_element(arr):
-    # write your code here
-    pass
-
+    largest_element = max(arr)
+    print("Largest: ", largest_element)
 
 # --- Run & Test ---
 print(largest_element([3, 2, 1, 5, 2]))     # expected: 5

@@ -22,10 +22,8 @@
 
 
 def left_rotate_by_k(arr, k):
-    # write your code here
-    # modify arr in-place
-    pass
-
+    
+    
 
 # --- Run & Test ---
 arr1 = [1, 2, 3, 4, 5]
