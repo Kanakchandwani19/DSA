@@ -25,8 +25,14 @@
 
 
 def print_name(name, n):
-    # write your code here
-    pass
+    if n == 0:
+        return
+    print(name)
+    print_name(name, n-1)
+    
+
+
+    
 
 
 # --- Run & Test ---

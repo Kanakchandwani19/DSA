@@ -19,8 +19,12 @@
 
 
 def print_1_to_n(n):
-    # write your code here
-    pass
+    if n==0:
+        return
+    
+    print_1_to_n(n-1)
+    print(n)
+
 
 
 # --- Run & Test ---

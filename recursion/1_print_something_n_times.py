@@ -32,7 +32,7 @@ def print_n_times(n):
         return 
     
     print("Hello")
-    print_n_times(n)
+    print_n_times(n-1)
 
 # --- Run & Test ---
 print_n_times(3)   # expected: Hello printed 3 times
