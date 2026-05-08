@@ -20,11 +20,17 @@
 
 # Hint: XOR of a number with itself is 0, XOR of a number with 0 is itself.
 #       XOR all elements — pairs cancel out, leaving the single element.
-
+#a^a =0
+#a^0 =a
 
 def single_number(arr):
-    # write your code here
-    pass
+    result = 0
+
+    for num in arr:
+        result = result ^ num
+
+    return result
+    
 
 
 # --- Run & Test ---

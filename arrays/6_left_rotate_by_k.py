@@ -19,16 +19,32 @@
 #   Explanation: rotating by N is the same as no rotation
 
 # Hint: K = K % N handles cases where K >= N
+def left_rotate_by_one(arr):
+    first = arr[0]  #store the first element
 
+    for i in range(len(arr) - 1):
+        arr[i] = arr[i+1]    #shift left
+
+    arr[len(arr) - 1] = first    #put the value of first at end
+    return arr
 
 def left_rotate_by_k(arr, k):
-    
+    n = len(arr)
+
+    k = k % n
+    for i in range(k):
+        left_rotate_by_one(arr)
+    return arr
+
+    # return arr[k:] + arr[:k]
+
+
     
 
 # --- Run & Test ---
 arr1 = [1, 2, 3, 4, 5]
-left_rotate_by_k(arr1, 2)
-print(arr1)   # expected: [3, 4, 5, 1, 2]
+x=left_rotate_by_k(arr1, 2)
+print(x)   # expected: [3, 4, 5, 1, 2]
 
 arr2 = [1, 2, 3, 4, 5]
 left_rotate_by_k(arr2, 0)

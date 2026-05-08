@@ -26,22 +26,19 @@ def remove_duplicates(arr):
     for num in arr:
         if num not in number:
             number.append(num)
-
-    for i in range(len(number)):
-        arr[i] = number[i]
-
-    return len(number)
+    return number, len(number)
+    
 
 
 # --- Run & Test ---
 arr1 = [1, 1, 2, 2, 3]
-k = remove_duplicates(arr1)
-print(k, arr1[:k])   # expected: 3 [1, 2, 3]
+number,k = remove_duplicates(arr1)
+print(k, number)   # expected: 3 [1, 2, 3]
 
 arr2 = [1, 1, 1, 1]
-k = remove_duplicates(arr2)
-print(k, arr2[:k])   # expected: 1 [1]
+number, k = remove_duplicates(arr2)
+print(k, number)   # expected: 1 [1]
 
 arr3 = [1, 2, 3, 4]
-k = remove_duplicates(arr3)
-print(k, arr3[:k])   # expected: 4 [1, 2, 3, 4]
+number,k = remove_duplicates(arr3)
+print(k, number)   # expected: 4 [1, 2, 3, 4]

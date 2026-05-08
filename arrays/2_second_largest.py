@@ -21,13 +21,31 @@
 
 
 def second_largest(arr):
-   arr = list(set(arr))  #removes duplicates
+   # arr = list(set(arr))  #removes duplicates
 
-   if len(arr) < 2:
+   # if len(arr) < 2:
+   #    return -1
+   
+   # arr.sort()
+   # return arr[-2]  #-2 means second largest element
+
+   largest = arr[0]
+   second = arr[0]
+
+   for n in arr:
+      if n > largest:
+         second = largest
+         largest = n
+
+      elif n>second and n != largest:
+         second = n
+
+   if second == largest:
       return -1
    
-   arr.sort()
-   return arr[-2]  #-2 means second largest element
+   
+
+   return second
 
 
 # --- Run & Test ---

@@ -21,10 +21,16 @@
 # Hint: sum of 1 to N = N*(N+1)/2 — subtract the sum of arr from it
 
 
-def find_missing(arr, n):
-    # write your code here
-    pass
+def find_missing(arr, n):           ##method 1
+    for i in range(1, n+1):
+        if i not in arr:
+            return i
+        
+def find_missing(arr, n):           ##method 2
+    missing = n * (n+1) // 2
+    original = sum(arr)
 
+    return missing - original
 
 # --- Run & Test ---
 print(find_missing([1, 2, 4, 5], 5))   # expected: 3

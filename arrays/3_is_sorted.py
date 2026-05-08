@@ -25,8 +25,15 @@
 #   Explanation: single element is always sorted
 
 
+
 def is_sorted(arr):
-    return arr == sorted(arr)
+    # return arr == sorted(arr)
+
+    for i in range(len(arr)-1):
+        if arr[i] > arr[i+1]:
+            return False
+    return True
+
 
 # --- Run & Test ---
 print(is_sorted([1, 2, 3, 4, 5]))   # expected: True

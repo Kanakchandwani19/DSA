@@ -22,8 +22,7 @@
 
 
 def union_sorted(a, b):
-    # write your code here
-    pass
+    
 
 
 # --- Run & Test ---

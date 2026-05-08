@@ -18,10 +18,18 @@
 
 
 def largest_element(arr):
-    largest_element = max(arr)
-    print("Largest: ", largest_element)
+    # largest_element = max(arr)
+    # print("Largest: ", largest_element)
+
+    largest_element = arr[0]
+
+    for i in arr:
+        if i > largest_element:
+            largest_element = i
+    return largest_element
+
 
 # --- Run & Test ---
 print(largest_element([3, 2, 1, 5, 2]))     # expected: 5
 print(largest_element([10, 10, 10]))         # expected: 10
-print(largest_element([-3, -1, -7, -2]))     # expected: -1
+print(largest_element([-3, -1, -7, -2]))   # expected: -1
