@@ -31,5 +31,3 @@ def count_digits(n):
 print(count_digits(12345))   # expected: 5
 print(count_digits(7))       # expected: 1
 print(count_digits(1000))    # expected: 4
-
-
