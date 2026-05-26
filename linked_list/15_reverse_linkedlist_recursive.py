@@ -12,13 +12,15 @@
 class Node:
     def __init__(self, data):
         # TODO: Implement node initialization
-        pass
+        self.data = data
+        self.next = None
+        self.prev = None
 
 
 class LinkedList:
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
 
     def reverse_recursive(self, head):
         """
@@ -27,11 +29,31 @@ class LinkedList:
         Space Complexity: O(n) due to recursion stack
         """
         # TODO: Implement recursive reverse
-        pass
+        
 
+        def solve(current, prev):
+
+            if current is None:
+                return prev
+                
+            next_node = current.next
+            current.next = prev
+            return solve(next_node, current)
+
+        return solve(self.head, None)
+
+        
     def print_list(self):
         # TODO: Implement print functionality
-        pass
+        curr = self.head
+
+        print(curr.data)
+
+        while curr:
+            print(curr.data, end = " -> ")
+            curr = curr.next
+
+        print("None")
 
 
 # --- Run & Test ---

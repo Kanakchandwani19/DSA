@@ -13,13 +13,14 @@
 class Node:
     def __init__(self, data):
         # TODO: Implement node initialization
-        pass
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
 
     def segregate_odd_even(self):
         """
@@ -28,11 +29,41 @@ class LinkedList:
         Space Complexity: O(1)
         """
         # TODO: Implement odd-even segregation
-        pass
+
+        if self.head == None or self.head.next == None:
+            return self.head
+        
+
+        odd = self.head
+        even = self.head.next
+        evenHead = even
+
+        while even and even.next:
+            odd.next = even.next
+            odd = odd.next
+
+            even.next = odd.next
+            even = even.next
+
+        odd.next = evenHead
+
+        return self.head
+
+
+
+        
+            
+
 
     def print_list(self):
         # TODO: Implement print functionality
-        pass
+        curr = self.head
+
+        while curr:
+            print(curr.data, end = " -> ")
+            curr = curr.next
+
+        print("None")
 
 
 # --- Run & Test ---

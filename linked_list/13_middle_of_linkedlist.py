@@ -22,14 +22,15 @@ class Node:
     """Node class represents a single node in a linked list"""
     def __init__(self, data):
         # TODO: Implement node initialization
-        pass
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
     """LinkedList class to manage nodes"""
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
 
     def find_middle(self):
         """
@@ -38,12 +39,30 @@ class LinkedList:
         Space Complexity: O(1)
         """
         # TODO: Implement find middle functionality
-        pass
+        if not self.head or not self.head.next:
+            return self.head
+            
+        slow = self.head
+        fast = self.head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow
+
+        
 
     def print_list(self):
         """Print all elements in the linked list"""
         # TODO: Implement print functionality
-        pass
+        curr = self.head
+
+        while curr:
+            print(curr.data, end = " -> ")
+            curr = curr.next
+
+        print("None")
 
 
 # --- Run & Test ---

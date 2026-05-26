@@ -13,13 +13,14 @@
 class Node:
     def __init__(self, data):
         # TODO: Implement node initialization
-        pass
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
 
     def sort_012(self):
         """
@@ -28,11 +29,53 @@ class LinkedList:
         Space Complexity: O(1)
         """
         # TODO: Implement sorting of 0s, 1s, and 2s
-        pass
+        zero = 0
+        one = 0
+        two = 0
+
+        current = self.head
+
+        while current:
+            if current.data == 0:
+                zero += 1
+
+            elif current.data == 1:
+                one += 1
+
+            else:
+                two += 1
+
+            current = current.next
+
+        current = self.head
+
+        while current:
+
+            if zero > 0:
+                current.data = 0
+                zero -= 1
+
+            elif one > 0:
+                current.data = 1
+                one -= 1
+
+            else:
+                current.data = 2
+                two -= 1
+
+            current = current.next
+
+
 
     def print_list(self):
         # TODO: Implement print functionality
-        pass
+        curr = self.head 
+         
+        while curr:
+            print(curr.data, end = " -> ")
+            curr = curr.next
+
+        print("None")
 
 
 # --- Run & Test ---

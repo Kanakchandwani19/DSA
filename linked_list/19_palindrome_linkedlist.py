@@ -38,6 +38,13 @@ class LinkedList:
         # TODO: Implement print functionality
         pass
 
+A -> B -> C -> B -> A 
+
+A -> B -> C
+
+A -> B -> None
+
+
 
 # --- Run & Test ---
 ll1 = LinkedList()

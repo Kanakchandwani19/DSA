@@ -22,14 +22,17 @@ class DoublyNode:
     """DoublyNode class represents a single node in a doubly linked list"""
     def __init__(self, data):
         # TODO: Implement node initialization with data, next, and prev
-        pass
+        self.data = data
+        self.next = None
+        self.prev = None
 
 
 class DoublyLinkedList:
     """DoublyLinkedList class to manage nodes"""
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
+        self.tail = None
 
     def remove_duplicates(self):
         """
@@ -38,12 +41,37 @@ class DoublyLinkedList:
         Space Complexity: O(1)
         """
         # TODO: Implement remove duplicates functionality
-        pass
+        if not self.head:
+            return None
+        
+        current = self.head
+
+        while current.next:
+            if current.data == current.next.data:
+                duplicate = current.next
+                current.next = duplicate.next
+
+                if duplicate.next:
+                    duplicate.next.prev = current
+
+            else:
+                current = current.next
+
+        return self.head
+
+
 
     def print_forward(self):
         """Print all elements from head to tail"""
         # TODO: Implement forward print functionality
-        pass
+        curr = self.head
+
+        while curr:
+            print(curr.data, end =" -> ")
+            curr = curr.next
+
+        print("None")
+
 
 
 # --- Run & Test ---

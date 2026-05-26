@@ -21,29 +21,56 @@ class DoublyNode:
     """DoublyNode class represents a single node in a doubly linked list"""
     def __init__(self, data):
         # TODO: Implement node initialization with data, next, and prev
-        pass
+        self.data = data
+        self.next = None
+        self.prev = None
 
 
 class DoublyLinkedList:
     """DoublyLinkedList class to manage nodes"""
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
+        self.tail = None
 
     def print_forward(self):
         """Print all elements from head to tail"""
         # TODO: Implement forward print functionality
-        pass
+        curr = self.head
+
+        while curr:
+            print(curr.data, end = " -> ")
+            curr = curr.next
+
+        print("None")
+
+
 
     def print_backward(self):
         """Print all elements from tail to head"""
         # TODO: Implement backward print functionality
-        pass
+        curr = self.tail
+
+        while curr:
+            print(curr.data, end = " -> ")
+            curr = curr.prev
+
+        print("None")
 
     def append(self, data):
         """Add a node at the end of the doubly linked list"""
         # TODO: Implement append functionality
-        pass
+        new_node = DoublyNode(data)
+
+        if self.head == None:
+            self.head = new_node
+            self.tail = new_node
+
+            return
+        
+        self.tail.next = new_node
+        new_node.prev = self.tail
+        self.tail = new_node
 
 
 # --- Run & Test ---

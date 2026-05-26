@@ -20,13 +20,15 @@
 class Node:
     def __init__(self, data):
         # TODO: Implement node initialization
-        pass
+        self.data = data
+        self.next  = None
+        self.prev = None
 
 
 class LinkedList:
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
 
     def reverse_iterative(self):
         """
@@ -35,11 +37,30 @@ class LinkedList:
         Space Complexity: O(1)
         """
         # TODO: Implement iterative reverse
-        pass
+        current = self.head
+        prev_node = None
+
+        while current:
+            next_node = current.next
+
+            current.next = prev_node
+            current.prev = next_node
+
+            prev_node = current
+            current = next_node
+
+        self.head = prev_node
+
 
     def print_list(self):
         # TODO: Implement print functionality
-        pass
+        curr = self.head
+
+        while curr:
+            print(curr.data, end = " -> ")
+            curr = curr.next
+
+        print("None")
 
 
 # --- Run & Test ---

@@ -13,13 +13,14 @@
 class Node:
     def __init__(self, data):
         # TODO: Implement node initialization
-        pass
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
 
     def find_loop_start(self):
         """
@@ -28,8 +29,22 @@ class LinkedList:
         Space Complexity: O(1)
         """
         # TODO: Implement finding loop start
-        pass
+        slow = self.head
+        fast = self.head
 
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow == fast:
+                slow = self.head
+                while slow != fast:
+                    slow = slow.next
+                    fast = fast.next
+
+                return slow
+            
+        return None
 
 # --- Run & Test ---
 ll1 = LinkedList()

@@ -17,13 +17,14 @@
 class Node:
     def __init__(self, data):
         # TODO: Implement node initialization
-        pass
+        self.data = data
+        self.next =  None
 
 
 class LinkedList:
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
 
     def add_one(self):
         """
@@ -32,11 +33,35 @@ class LinkedList:
         Space Complexity: O(1) or O(n) depending on approach
         """
         # TODO: Implement adding one to the number
-        pass
+        #recursion backtracking approach
+        def helper(temp):
+            if temp is None:
+                return 1
+            
+            carry = helper(temp.next)
+            temp.data = temp.data + carry
+
+            if temp.data < 10:
+                return 0
+            temp.data = 0
+            return 1
+
+        carry = helper(self.head)
+        if carry == 1:
+            newNode = Node(1)
+            newNode.next = self.head
+            self.head = newNode
+        return self.head
 
     def print_list(self):
         # TODO: Implement print functionality
-        pass
+        curr = self.head
+
+        while curr:
+            print(curr.data, end = " -> ")
+            curr = curr.next
+        print("None")
+
 
 
 # --- Run & Test ---

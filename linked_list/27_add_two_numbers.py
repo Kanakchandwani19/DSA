@@ -19,13 +19,14 @@
 class Node:
     def __init__(self, data):
         # TODO: Implement node initialization
-        pass
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
 
     @staticmethod
     def add_two_numbers(l1, l2):
@@ -35,11 +36,39 @@ class LinkedList:
         Space Complexity: O(max(m, n))
         """
         # TODO: Implement adding two numbers
-        pass
+        newNode = Node(0)   #create a dummy node
+        current = newNode
+
+        carry = 0 
+
+        while l1 or l2 or carry:
+            total = carry
+
+            if l1:
+                total += l1.data
+                l1 = l1.next
+
+            if l2:
+                total += l2.data
+                l2 = l2.next
+
+            digit = total % 10
+            carry = total // 10
+
+            current.next = Node(digit)
+
+            current = current.next
+
+        return newNode.next
 
     def print_list(self):
         # TODO: Implement print functionality
-        pass
+        curr = self.head
+
+        while curr:
+            print(curr.data, end = " -> ")
+            curr = curr.next
+        print("None")
 
 
 # --- Run & Test ---

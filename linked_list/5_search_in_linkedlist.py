@@ -23,14 +23,15 @@ class Node:
     """Node class represents a single node in a linked list"""
     def __init__(self, data):
         # TODO: Implement node initialization
-        pass
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
     """LinkedList class to manage nodes"""
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
 
     def search(self, target):
         """
@@ -40,7 +41,14 @@ class LinkedList:
         Returns: True if found, False otherwise
         """
         # TODO: Implement search functionality (return True/False)
-        pass
+        current = self.head
+
+        while current != None:
+            if current.data == target:
+                return True
+            current = current.next
+
+        return False
 
     def search_index(self, target):
         """
@@ -48,12 +56,26 @@ class LinkedList:
         Returns: index of target (0-based), or -1 if not found
         """
         # TODO: Implement search functionality (return index)
-        pass
+        current = self.head
+        curr_index = 0
+
+        while current != None:
+            if current.data == target:
+                return curr_index
+
+            current = current.next
+            curr_index += 1
+        return -1            
 
     def print_list(self):
         """Print all elements in the linked list"""
         # TODO: Implement print functionality
-        pass
+        curr = self.head
+        while curr:
+            print(curr.data, end = " -> ")
+            curr = curr.next
+        print("None")
+
 
 
 # --- Run & Test ---

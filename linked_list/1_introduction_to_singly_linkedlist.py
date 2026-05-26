@@ -21,25 +21,47 @@ class Node:
     """Node class represents a single node in a linked list"""
     def __init__(self, data):
         # TODO: Implement node initialization
-        pass
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
     """LinkedList class to manage nodes"""
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
 
     def print_list(self):
         """Print all elements in the linked list"""
         # TODO: Implement print functionality
-        pass
+        curr = self.head
+        while curr:
+            print(curr.data, end=" -> ")
+            curr = curr.next
+        print("None")
+        
+
 
     def append(self, data):
         """Add a node at the end of the linked list"""
         # TODO: Implement append functionality
-        pass
+        new_node = Node(data)
+        if self.head == None:
+            self.head = new_node
+            return 
+         
+        curr = self.head
+        while curr.next != None :
+            curr = curr.next 
+        curr.next = new_node
 
+# if self.head == None:     #check empty list
+#             return 
+
+#   if self.head.next == None:      #single node case
+#             self.head = None
+#             return
+        
 
 # --- Run & Test ---
 

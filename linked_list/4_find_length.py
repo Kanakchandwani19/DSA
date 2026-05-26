@@ -21,14 +21,15 @@ class Node:
     """Node class represents a single node in a linked list"""
     def __init__(self, data):
         # TODO: Implement node initialization
-        pass
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
     """LinkedList class to manage nodes"""
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
 
     def find_length(self):
         """
@@ -37,12 +38,25 @@ class LinkedList:
         Space Complexity: O(1)
         """
         # TODO: Implement length calculation
-        pass
+        count = 0
+        current = self.head
+
+        while current != None:
+            count += 1
+            current = current.next 
+
+        return count
+
 
     def print_list(self):
         """Print all elements in the linked list"""
         # TODO: Implement print functionality
-        pass
+        curr = self.head
+        while curr:
+            print(curr.data, end = " -> ")
+            curr = curr.next
+        print("None")
+        
 
 
 # --- Run & Test ---

@@ -15,13 +15,14 @@
 class Node:
     def __init__(self, data):
         # TODO: Implement node initialization
-        pass
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
 
     @staticmethod
     def find_intersection(head1, head2):
@@ -31,7 +32,36 @@ class LinkedList:
         Space Complexity: O(1)
         """
         # TODO: Implement finding intersection point
-        pass
+
+        def collisionPoint(t1, t2, d):
+            while d:
+                d -= 1
+                t1 = t1.next
+
+            while t1 != t2:
+                t1 = t1.next
+                t2 = t2.next
+
+            return t1
+
+        t1 = head1
+        n1 = 0 
+        
+        while t1 != None:
+            n1 += 1
+            t1 = t1.next
+
+        t2 = head2
+        n2 = 0
+
+        while t2 != None:
+            n2 += 1
+            t2 = t2.next
+
+        if n1 < n2:
+            return collisionPoint(head2, head1, n2-n1)
+        else:
+            return collisionPoint(head1, head2, n1-n2)
 
 
 # --- Run & Test ---

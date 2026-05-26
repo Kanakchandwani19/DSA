@@ -13,13 +13,14 @@
 class Node:
     def __init__(self, data):
         # TODO: Implement node initialization
-        pass
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
 
     def remove_nth_from_end(self, n):
         """
@@ -27,12 +28,35 @@ class LinkedList:
         Time Complexity: O(n)
         Space Complexity: O(1)
         """
+        
         # TODO: Implement removal of Nth node from end
-        pass
+        length = 0
+        current = self.head
+
+        while current:
+            length += 1
+            current = current.next
+
+        pos = length -n    #condition
+        
+        current = self.head
+
+        for i in range(pos-1):
+            current = current.next
+
+        current.next = current.next.next
+        
 
     def print_list(self):
         # TODO: Implement print functionality
-        pass
+        curr = self.head
+
+        while curr:
+            print(curr.data, end=" -> ")
+            curr = curr.next
+
+        print("None")
+
 
 
 # --- Run & Test ---

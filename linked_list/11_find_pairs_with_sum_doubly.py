@@ -22,14 +22,17 @@ class DoublyNode:
     """DoublyNode class represents a single node in a doubly linked list"""
     def __init__(self, data):
         # TODO: Implement node initialization with data, next, and prev
-        pass
+        self.data = data
+        self.next = None
+        self.prev = None
 
 
 class DoublyLinkedList:
     """DoublyLinkedList class to manage nodes"""
     def __init__(self):
         # TODO: Initialize head
-        pass
+        self.head = None
+        self.tail = None
 
     def find_pairs_with_sum(self, target):
         """
@@ -38,12 +41,46 @@ class DoublyLinkedList:
         Space Complexity: O(1) excluding output array
         """
         # TODO: Implement find pairs functionality
-        pass
+        if not self.head or not self.head.next:
+            return []
+        left = self.head
+        right = self.head
+
+        while right.next:
+            right = right.next
+
+        pairs = []
+
+        while left != right and right.next != left:
+            current_sum = left.data + right.data
+
+            if current_sum == target:
+                pairs.append((left.data , right.data))
+
+                left = left.next
+                right = right.prev
+
+            elif current_sum < target:
+                left = left.next
+
+            else:
+                right = right.prev
+
+        return pairs
+
+
+
 
     def print_forward(self):
         """Print all elements from head to tail"""
         # TODO: Implement forward print functionality
-        pass
+        curr = self.head
+
+        while curr:
+            print(curr.data, end = " -> ")
+            curr = curr.next
+
+        print("None")
 
 
 # --- Run & Test ---
