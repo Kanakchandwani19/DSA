@@ -26,8 +26,19 @@ def find_min_rotated_array(arr):
     # Write your code here
     # Hint: The minimum element is the only element whose previous is greater
     # Use binary search: if arr[mid] > arr[right], min is in right half
-    pass
+    left = 0 
+    right = len(arr) - 1
 
+    while left < right:
+        mid = (left + right) // 2
+
+        if arr[mid] > arr[right]:
+            left = mid + 1
+        
+        else:
+            right = mid
+
+    return arr[left]
 
 # --- Run & Test ---
 print(find_min_rotated_array([3, 4, 5, 1, 2]))       # expected: 1

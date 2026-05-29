@@ -35,7 +35,12 @@ class TreeNode:
 def inorder(root, result=None):
     # write your code here
     # hint: recurse left first, then visit root, then recurse right
-    pass
+    if root is None:
+        return 
+    
+    inorder(root.left , result)
+    result.append(root.data)
+    inorder(root.right , result)
 
 
 # --- Run & Test ---

@@ -34,7 +34,12 @@ class TreeNode:
 def preorder(root, result=None):
     # write your code here
     # hint: visit root first, then recurse left, then recurse right
-    pass
+    if root is None:
+        return
+    
+    result.append(root.data)  #or use "+="
+    preorder(root.left, result)
+    preorder(root.right, result)
 
 
 # --- Run & Test ---

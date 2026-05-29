@@ -17,7 +17,14 @@ class TreeNode:
         self.left = None
         self.right = None
 
+def inorder(root):
 
+    if root is None:
+        return 
+        
+    inorder(root.left)
+    print(root.data)
+    inorder(root.right)
 # Building a tree manually:
 #
 #        1
@@ -28,7 +35,7 @@ class TreeNode:
 #
 # We create each node and connect them via .left and .right
 
-root = TreeNode(1)
+root = TreeNode(1)          #to build the tree
 root.left = TreeNode(2)
 root.right = TreeNode(3)
 root.left.left = TreeNode(4)
@@ -41,3 +48,6 @@ print("Root's right child:", root.right.data) # 3
 print("Root's left->left:", root.left.left.data)  # 4
 print("Root's left->right:", root.left.right.data) # 5
 print("Root's right->left:", root.right.left)  # None (no child)
+
+print("Inorder:")
+inorder(root)

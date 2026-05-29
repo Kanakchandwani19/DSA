@@ -36,8 +36,12 @@ class TreeNode:
 def postorder(root, result=None):
     # write your code here
     # hint: recurse left, then right, then visit root last
-    pass
-
+    if root is None:
+        return
+    
+    postorder(root.left, result)
+    postorder(root.right, result)
+    result.append(root.data)
 
 # --- Run & Test ---
 root1 = TreeNode(1)

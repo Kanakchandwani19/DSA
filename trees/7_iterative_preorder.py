@@ -21,7 +21,7 @@
 #     - Push left child
 
 
-class TreeNode:
+class TreeNode: 
     def __init__(self, data):
         self.data = data
         self.left = None

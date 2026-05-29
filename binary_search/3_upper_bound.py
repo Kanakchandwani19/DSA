@@ -25,7 +25,21 @@ def upper_bound(arr, target):
     # Write your code here
     # Hint: Similar to lower bound
     # Keep moving left when arr[mid] > target
-    pass
+    left = 0
+    right = len(arr)-1
+    current = len(arr)
+
+    while left <= right:
+        mid = (left + right) // 2
+
+        if arr[mid] > target:
+            current = mid
+            right = mid - 1
+
+        else:
+            left = mid + 1
+
+    return current
 
 
 # --- Run & Test ---

@@ -36,7 +36,7 @@ class TreeNode:
 def all_traversals(root):
     # write your code here
     # return (preorder_list, inorder_list, postorder_list)
-    pass
+    
 
 
 # --- Run & Test ---

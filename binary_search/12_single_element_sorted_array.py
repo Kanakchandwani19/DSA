@@ -27,7 +27,23 @@ def single_element_sorted_array(arr):
     # Hint: Before the single element, pairs start at even indices
     # After the single element, pairs start at odd indices
     # Use binary search to find the transition point
-    pass
+    left = 0
+    right = len(arr) - 1
+
+    while left < right:
+        mid = (left + right) // 2
+
+        if mid % 2 == 1:
+            mid = mid - 1
+
+        if arr[mid] == arr[mid + 1]:
+            left = mid +  2
+
+        else:
+            right = mid
+
+    return arr[left]
+
 
 
 # --- Run & Test ---

@@ -27,10 +27,40 @@ def floor_and_ceil(arr, target):
     # Write your code here
     # Hint: Floor is the largest element <= target
     # Ceil is the smallest element >= target (lower bound)
-    pass
+    left = 0
+    right = len(arr) - 1
+    floor = -1
 
+    while left <= right:
+        mid = (left + right) // 2
+        
+        if arr[mid] <= target:
+            floor = arr[mid]
+            left = mid + 1
 
-# --- Run & Test ---
+        else: 
+            right = mid - 1
+
+    left = 0
+    right = len(arr) - 1
+    ceil = -1
+    
+    while left <= right:
+        mid = (left + right) // 2
+
+        if arr[mid] >= target:
+            ceil = arr[mid]
+            right = mid - 1
+
+        else:
+            left = mid + 1
+
+    return (floor, ceil)
+    
+    
+    
+    
+    # --- Run & Test ---
 print(floor_and_ceil([1, 2, 8, 10, 10, 12, 19], 5))   # expected: (2, 8)
 print(floor_and_ceil([1, 2, 8, 10, 10, 12, 19], 10))  # expected: (10, 10)
 print(floor_and_ceil([1, 2, 8, 10, 10, 12, 19], 0))   # expected: (-1, 1)

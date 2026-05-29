@@ -28,6 +28,20 @@ def rotation_count(arr):
     # Use same approach as finding minimum in rotated array
     pass
 
+    left = 0
+    right = len(arr) - 1
+
+    while left < right:
+        mid = (left + right) // 2
+
+        if arr[mid] > arr[right]:
+            left = mid +1
+
+        else:
+            right = mid
+
+    return left
+
 
 # --- Run & Test ---
 print(rotation_count([4, 5, 6, 7, 0, 1, 2]))   # expected: 4

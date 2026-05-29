@@ -47,3 +47,17 @@
 #   Level Order : level by level, left to right (BFS)
 
 print("Tree concepts loaded. Move on to 2_binary_tree_representation.py")
+class TreeNode:
+
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+
+
