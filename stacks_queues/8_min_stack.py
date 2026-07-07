@@ -26,28 +26,52 @@ class MinStack:
     def __init__(self):
         # Write your code here
         # Hint: Use two stacks - one for elements, one for minimum values
-        pass
+        self.stack = []
+        self.min_stack = []
+        
 
     def push(self, x):
         # Write your code here
         # Hint: Push to main stack
         # Push to min stack if x is less than or equal to current min
-        pass
+        self.stack.append(x)
+
+        if not self.min_stack or x <= self.min_stack[-1]:
+            self.min_stack.append(x)
+
 
     def pop(self):
         # Write your code here
         # Hint: Pop from main stack
         # Pop from min stack if popped value equals current min
-        pass
+
+        if not self.stack:
+            return "Empty"
+        
+        value = self.stack.pop()
+
+        if value == self.min_stack[-1]:
+            self.min_stack.pop()
+
+        return value
+
 
     def top(self):
         # Write your code here
-        pass
+        if not self.stack:
+            return "Empty"
+
+        return self.stack[-1]
+    
 
     def get_min(self):
         # Write your code here
         # Hint: Return top of min stack
-        pass
+        if not self.min_stack:
+            return "Empty"
+
+        return self.min_stack[-1]
+    
 
 
 # --- Run & Test ---

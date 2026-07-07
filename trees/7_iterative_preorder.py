@@ -30,7 +30,7 @@ class TreeNode:
 
 def iterative_preorder(root):
     # write your code here
-    pass
+    
 
 
 # --- Run & Test ---

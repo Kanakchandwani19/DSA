@@ -25,30 +25,36 @@ class Queue:
     def __init__(self):
         # Write your code here
         # Hint: Initialize an empty list to store elements
-        pass
+        self.queue = []
 
     def enqueue(self, x):
         # Write your code here
         # Hint: Append element to the end of list
-        pass
+        self.queue.append(x)
 
     def dequeue(self):
         # Write your code here
         # Hint: Check if queue is empty, then remove and return first element
-        pass
+        if self.is_empty():
+            return "Queue is Empty"
+
+        return self.queue.pop(0)
 
     def front(self):
         # Write your code here
         # Hint: Return first element without removing
-        pass
+        if self.is_empty():
+            return "Queue is Empty"
+
+        return self.queue[0]
 
     def is_empty(self):
         # Write your code here
-        pass
+        return len(self.queue) == 0
 
     def size(self):
         # Write your code here
-        pass
+        return len(self.queue)
 
 
 # --- Run & Test ---

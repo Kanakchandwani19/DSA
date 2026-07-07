@@ -21,28 +21,48 @@ class QueueUsingStack:
     def __init__(self):
         # Write your code here
         # Hint: Use two stacks - one for enqueue, one for dequeue
-        pass
+        self.stack1 = []
+        self.stack2 = []
 
     def enqueue(self, x):
         # Write your code here
         # Hint: Simply push to the first stack
-        pass
+        self.stack1.append(x)
+
 
     def dequeue(self):
         # Write your code here
         # Hint: If second stack is empty, transfer all elements from first stack
         # Then pop from second stack
-        pass
+        if self.empty():
+            return "Empty"
+
+        if not self.stack2:
+
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+
+        return self.stack2.pop()
+                
+    
 
     def front(self):
         # Write your code here
         # Hint: Similar to dequeue, but peek instead of pop
-        pass
+        if self.empty():
+            return "Empty"
+
+        if not self.stack2:
+
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+
+        return self.stack2[-1]
 
     def empty(self):
         # Write your code here
         # Hint: Queue is empty when both stacks are empty
-        pass
+        return (len(self.stack1) == 0 and len(self.stack2) == 0)
 
 
 # --- Run & Test ---

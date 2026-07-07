@@ -30,26 +30,55 @@ class QueueUsingLinkedList:
     def __init__(self):
         # Write your code here
         # Hint: Initialize front and rear as None
-        pass
+        self.front_node = None
+        self.rear_node = None
+        self.count = 0
 
     def enqueue(self, x):
         # Write your code here
         # Hint: Create new node and add it to rear
-        pass
+        new_node = Node(x)
+
+        if self.is_empty():
+
+            self.front_node = new_node
+            self.rear_node = new_node
+
+        else:
+            self.rear_node.next = new_node
+            self.rear_node = new_node
+
+        self.count += 1
+
 
     def dequeue(self):
         # Write your code here
         # Hint: Check if queue is empty, then remove and return front data
-        pass
+        if self.is_empty():
+            return "Empty"
+
+        removed = self.front_node.data
+
+        self.front_node = self.front_node.next
+
+        self.count -= 1
+
+        if self.front_node is None:
+            self.rear_node = None
+
+        return removed
 
     def front(self):
         # Write your code here
         # Hint: Return front data without removing
-        pass
+        if self.is_empty():
+            return "Empty"
+
+        return self.front_node.data
 
     def is_empty(self):
         # Write your code here
-        pass
+        return self.front_node is None
 
 
 # --- Run & Test ---

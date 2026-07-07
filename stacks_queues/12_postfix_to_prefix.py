@@ -26,7 +26,21 @@ def postfix_to_prefix(expression):
     # Hint: Use a stack, traverse from left to right
     # For operands: push to stack
     # For operators: pop two operands, create prefix string (operator op2 op1), push back
-    pass
+    stack = []
+
+    for ch in expression:
+
+        if ch.isalnum():
+            stack.append(ch)
+
+        else:
+            op2 = stack.pop()
+            op1 = stack.pop()
+
+            new_exp = "(" + ch + op1 + op2 + ")"
+            stack.append(new_exp)
+
+    return stack[-1]
 
 
 # --- Run & Test ---

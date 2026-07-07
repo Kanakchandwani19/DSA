@@ -30,26 +30,43 @@ class StackUsingLinkedList:
     def __init__(self):
         # Write your code here
         # Hint: Initialize head as None
-        pass
+        self.top = None
+        self.count = 0
 
     def push(self, x):
         # Write your code here
         # Hint: Create new node and make it the new head
-        pass
+        new_node = Node(x)
+
+        new_node.next = self.top
+        self.top = new_node
+
+        self.count += 1
 
     def pop(self):
         # Write your code here
         # Hint: Check if stack is empty, then remove and return head data
-        pass
+        if self.is_empty():
+            return "Empty"
+
+        removed = self.top.data
+        self.top = self.top.next
+
+        self.count -= 1
+
+        return removed
 
     def peek(self):
         # Write your code here
         # Hint: Return head data without removing
-        pass
+        if self.is_empty():
+            return "Empty"
+
+        return self.top.data
 
     def is_empty(self):
         # Write your code here
-        pass
+        return self.top is None
 
 
 # --- Run & Test ---

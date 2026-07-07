@@ -25,30 +25,37 @@ class Stack:
     def __init__(self):
         # Write your code here
         # Hint: Initialize an empty list to store elements
-        pass
+        self.stack = []
 
     def push(self, x):
         # Write your code here
         # Hint: Append element to the end of list
-        pass
+        self.stack.append(x)
+
 
     def pop(self):
         # Write your code here
         # Hint: Check if stack is empty, then remove and return last element
-        pass
+        if self.is_empty():
+            return "Stack is empty"
+
+        return self.stack.pop()
 
     def peek(self):
         # Write your code here
         # Hint: Return last element without removing
-        pass
+        if self.is_empty():
+                    return "Stack is empty"
+
+        return self.stack[-1]
 
     def is_empty(self):
         # Write your code here
-        pass
+        return len(self.stack) == 0
 
     def size(self):
         # Write your code here
-        pass
+        return len(self.stack )
 
 
 # --- Run & Test ---

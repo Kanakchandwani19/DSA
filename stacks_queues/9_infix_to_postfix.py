@@ -27,6 +27,18 @@
 #   Output: "ABC*+D-"
 
 # Difficulty: Medium
+def precedence(op):
+
+    if op == '+' or op == '-':
+        return 1
+
+    elif op == '*' or op == '/':
+        return 2
+
+    elif op == '^':
+        return 3 
+
+    return 0
 
 
 def infix_to_postfix(expression):
@@ -36,7 +48,38 @@ def infix_to_postfix(expression):
     # For '(': push to stack
     # For ')': pop until '(' is found
     # For operators: pop operators with higher/equal precedence, then push current
-    pass
+    
+    stack = []
+    result = ""
+
+    for ch in expression:
+
+        if ch.isalnum():
+            result += ch
+
+        elif ch == '(':
+            stack.append(ch)
+
+        elif ch == ')':
+
+            while stack and stack[-1] != '(':
+                result += stack.pop()
+
+            stack.pop()
+
+        else:
+            while (stack and precedence(stack[-1]) >= precedence(ch)):
+                result += stack.pop()
+
+            stack.append(ch)
+
+    while stack:
+        result += stack.pop()
+
+    return result
+
+
+    
 
 
 # --- Run & Test ---

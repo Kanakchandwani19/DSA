@@ -26,7 +26,23 @@ def prefix_to_infix(expression):
     # Hint: Use a stack, traverse from right to left
     # For operands: push to stack
     # For operators: pop two operands, create infix string (op1 operator op2), push back
-    pass
+    stack = []
+
+    for ch in reversed(expression):
+
+        if ch.isalnum():
+            stack.append(ch)
+
+        else:
+
+            op1 = stack.pop()
+            op2 = stack.pop()
+
+            temp = "(" + op1 + ch + op2 + ")"
+
+            stack.append(temp)
+
+    return stack.pop()
 
 
 # --- Run & Test ---

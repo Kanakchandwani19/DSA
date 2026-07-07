@@ -23,27 +23,37 @@ class StackUsingQueue:
     def __init__(self):
         # Write your code here
         # Hint: Use one or two queues
-        pass
+        self.queue = []
 
     def push(self, x):
         # Write your code here
         # Hint: After adding element, rotate the queue so that new element is at front
         # Example: Add x, then move all previous elements to back
-        pass
+        self.queue.append(x)
+
+        for i in range(len(self.queue)-1):
+
+            self.queue.append(self.queue.pop(0))
 
     def pop(self):
         # Write your code here
         # Hint: Remove and return front element from queue
-        pass
+        if self.empty():
+            return "Empty"
+
+        return self.queue.pop(0)
 
     def top(self):
         # Write your code here
         # Hint: Return front element without removing
-        pass
+        if self.empty():
+            return "Empty"
+
+        return self.queue[0]
 
     def empty(self):
         # Write your code here
-        pass
+        return len(self.queue) == 0
 
 
 # --- Run & Test ---
