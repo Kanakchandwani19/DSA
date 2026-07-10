@@ -25,7 +25,22 @@ def count_greater_elements_right(arr):
     # Hint: Traverse from right to left
     # For each element, count elements in remaining array that are greater
     # Can use a sorted data structure or merge sort approach
-    pass
+    n = len(arr)
+    result = []
+
+    for i in range(n):
+        count = 0
+
+        for j in range(i+1, n):
+            if arr[j] > arr[i]:
+
+                count += 1
+
+        result.append(count)
+
+    return result
+
+        
 
 
 # --- Run & Test ---

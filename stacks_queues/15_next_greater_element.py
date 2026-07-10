@@ -27,7 +27,29 @@ def next_greater_element(arr):
     # Hint: Use a stack, traverse from right to left
     # Pop elements from stack that are smaller than current element
     # Top of stack is the next greater element
-    pass
+    stack = []
+    result = []
+
+    for i in range(len(arr) - 1, -1, -1):
+
+        while stack and stack[-1] <= arr[i]:
+            stack.pop()
+
+        if not stack:
+            result.append(-1)
+
+        else:
+            result.append(stack[-1])
+
+        stack.append(arr[i])
+
+    return result[::-1]
+
+
+
+
+
+    
 
 
 # --- Run & Test ---

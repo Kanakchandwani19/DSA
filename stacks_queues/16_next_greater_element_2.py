@@ -26,7 +26,27 @@ def next_greater_element_2(arr):
     # Write your code here
     # Hint: Since array is circular, traverse the array twice (use modulo)
     # Use a stack similar to NGE-1
-    pass
+    n = len(arr)
+    result = [-1] *n
+    stack = []
+
+    for i in range(2 * n-1, -1, -1):
+
+        index = i % n
+
+        while stack and stack[-1] <= arr[index]:
+            stack.pop()
+
+        if i <n :
+            if stack:
+                result[index] = stack[-1]
+
+        stack.append(arr[index])
+
+    return result
+
+
+
 
 
 # --- Run & Test ---
